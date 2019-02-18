@@ -1,0 +1,15 @@
+{
+  "name": "async-trottle",
+  "version": "1.0.0",
+  "description": "Trottle for async function.",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles",
+    "jest": "jest --init"
+  },
+  "author": "Denis Vildanov",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.0.0"
+  }
+}
