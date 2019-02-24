@@ -3,8 +3,8 @@
  * if argument function isnt resolved, asyncThrottle returns this function for new call. 
  * Or calls just calls new functon. 
  * @example
- * @param {*} fn 
- * @returns typeof fn
+ * @param {function} fn - async function
+ * @returns function result.
  */
 function asyncThrottle(fn) {
   let isThrottled = false,
@@ -29,10 +29,3 @@ function asyncThrottle(fn) {
   }
 }
 module.exports =  asyncThrottle;
-
-// const throttledSleep = asyncThrottle(sleep);
-
-// const first = throttledSleep();
-// const second = throttledSleep();
-
-// console.log(`First and second: ${first}, ${second}, ${first === second}`);
