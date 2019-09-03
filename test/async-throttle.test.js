@@ -1,4 +1,4 @@
-const asynctThrottle = require("../async-throttle");
+const asyncThrottle = require("../async-throttle");
 
 function sleepFactory(timeout) {
   return () => {
@@ -14,7 +14,7 @@ const sleep = sleepFactory(1500);
 
 describe('asyncThrottle', () => {
   it("Should return link to one promise for some calls", () => {
-    const throttledSleep = asynctThrottle(sleep);
+    const throttledSleep = asyncThrottle(sleep);
     const first = throttledSleep();
     const second = throttledSleep();
     expect(first).toEqual(second);
@@ -22,7 +22,7 @@ describe('asyncThrottle', () => {
 
   it("Function should call 1 time", () => {
     const mockFn = jest.fn();
-    const throttledSleep = asynctThrottle(() => {
+    const throttledSleep = asyncThrottle(() => {
       mockFn();
       return sleep();
     });
@@ -35,7 +35,7 @@ describe('asyncThrottle', () => {
 
   it("Function should call 2 times", async() => {
     const mockFn = jest.fn();
-    const throttledSleep = asynctThrottle(() => {
+    const throttledSleep = asyncThrottle(() => {
       mockFn();
       return sleep();
     });
